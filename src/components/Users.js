@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class UserList extends Component {
+class Users extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,19 +20,26 @@ class UserList extends Component {
             });
     }
 
+    handleCreate = () => {
+        window.location.href = "/user/add";
+    };
+
     render() {
         const { users } = this.state;
         return (
             <div>
                 <h1>Users</h1>
-                <ul>
-                    {users.map(user => (
-                        <li key={user.id}> {user.name} </li>
-                    ))}
-                </ul>
+                {users.map(user => (
+                    <div key={user.id}>
+                        <a href={`/user/${user.id}`}> {user.name} </a>
+                    </div>
+                ))}
+                <button type="button" onClick={this.handleCreate}>
+                    Create
+                </button>
             </div>
         );
     }
 }
 
-export default UserList;
+export default Users;
