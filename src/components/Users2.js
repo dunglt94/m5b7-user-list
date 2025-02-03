@@ -24,19 +24,26 @@ class Users2 extends Component {
             });
     }
 
-    getUsers = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                axios
-                    .get("http://localhost:3001/api/users")
-                    .then(res => {
-                        resolve(res);
-                    })
-                    .catch(err => {
-                        reject(err);
-                    });
-            }, 2000);
+    // getUsers = () => {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             axios
+    //                 .get("http://localhost:3001/api/users")
+    //                 .then(res => {
+    //                     resolve(res);
+    //                 })
+    //                 .catch(err => {
+    //                     reject(err);
+    //                 });
+    //         }, 2000);
+    //     });
+    // };
+
+    getUsers = async () => {
+        await new Promise(resolve => {
+            setTimeout(resolve, 3000);
         });
+        return await axios.get("http://localhost:3001/api/users");
     };
 
     render() {
