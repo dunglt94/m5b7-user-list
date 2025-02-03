@@ -1,7 +1,8 @@
 // import Users from "./components/Users";
 // import {BrowserRouter, Routes, Route} from "react-router-dom";
 // import UserDetails from "./components/UserDetails";
-import Users2 from "./components/Users2";
+// import Users2 from "./components/Users2";
+import UsersAndArticles from "./components/UsersAndArticles";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         {/*    </Routes>*/}
         {/*</BrowserRouter>*/}
 
-        <Users2/>
+        {/*<Users2/>*/}
+
+        <UsersAndArticles />
     </div>
   );
 }
