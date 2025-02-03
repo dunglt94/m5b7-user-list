@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
 
 class Users extends Component {
@@ -13,7 +13,7 @@ class Users extends Component {
         axios
             .get("http://localhost:3001/api/users")
             .then(res => {
-                this.setState({ users: res.data });
+                this.setState({users: res.data});
             })
             .catch(err => {
                 throw err;
@@ -25,7 +25,7 @@ class Users extends Component {
     };
 
     render() {
-        const { users } = this.state;
+        const {users} = this.state;
         return (
             <div>
                 <h1>Users</h1>
